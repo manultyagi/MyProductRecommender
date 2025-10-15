@@ -1,0 +1,120 @@
+/** @import must precede all other statements */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   * A different format will require also updating the theme in tailwind.config.ts.
+  */
+  :root {
+    /* Warm, friendly palette */
+    --background: 30 40% 96%; /* soft beige */
+    --foreground: 24 20% 18%; /* deep warm brown */
+
+    --card: 30 40% 98%;
+    --card-foreground: 24 20% 18%;
+
+    --popover: 30 40% 98%;
+    --popover-foreground: 24 20% 18%;
+
+    --primary: 16 70% 45%; /* terracotta */
+    --primary-foreground: 24 100% 98%;
+
+    --secondary: 28 70% 88%; /* peach cream */
+    --secondary-foreground: 24 30% 22%;
+
+    --muted: 28 35% 88%;
+    --muted-foreground: 24 16% 36%;
+
+    --accent: 20 55% 84%;
+    --accent-foreground: 24 30% 22%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 25 25% 84%;
+    --input: 25 25% 84%;
+    --ring: 16 70% 45%;
+
+    --radius: 0.9rem;
+
+    /* Sidebar (kept consistent with warm tones) */
+    --sidebar-background: 30 40% 96%;
+    --sidebar-foreground: 24 20% 18%;
+    --sidebar-primary: 16 70% 45%;
+    --sidebar-primary-foreground: 24 100% 98%;
+    --sidebar-accent: 28 70% 90%;
+    --sidebar-accent-foreground: 24 30% 22%;
+
+    --sidebar-border: 25 25% 84%;
+    --sidebar-ring: 16 70% 45%;
+  }
+
+  .dark {
+    --background: 24 24% 11%; /* deep brown */
+    --foreground: 30 40% 96%;
+
+    --card: 24 24% 14%;
+    --card-foreground: 30 40% 96%;
+
+    --popover: 24 24% 14%;
+    --popover-foreground: 30 40% 96%;
+
+    --primary: 16 70% 52%;
+    --primary-foreground: 24 100% 98%;
+
+    --secondary: 20 30% 20%;
+    --secondary-foreground: 30 40% 96%;
+
+    --muted: 20 18% 22%;
+    --muted-foreground: 28 25% 78%;
+
+    --accent: 16 35% 24%;
+    --accent-foreground: 30 40% 96%;
+
+    --destructive: 0 62.8% 40.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 20 18% 22%;
+    --input: 20 18% 22%;
+    --ring: 16 70% 52%;
+
+    --sidebar-background: 24 24% 11%;
+    --sidebar-foreground: 30 40% 96%;
+    --sidebar-primary: 16 70% 52%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 20 18% 22%;
+    --sidebar-accent-foreground: 30 40% 96%;
+    --sidebar-border: 20 18% 22%;
+    --sidebar-ring: 16 70% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Poppins", ui-sans-serif, system-ui, -apple-system,
+      Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji",
+      "Segoe UI Emoji";
+  }
+
+  :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  pre,
+  code {
+    overflow-x: auto;
+    white-space: pre;
+  }
+}
